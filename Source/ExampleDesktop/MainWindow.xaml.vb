@@ -8,6 +8,9 @@ Class MainWindow
 		Dim myDouble As Double
 
 		' code here
+		'myInteger = InputTextBox.Text
+		'myDouble = InputTextBox.Text
+
 
 		OutputToScreen("--Integer------")
 		OutputToScreen(myInteger.ToString())
@@ -21,9 +24,9 @@ Class MainWindow
 	Private Sub RunCode2(sender As Object, e As RoutedEventArgs) Handles RunCode2Button.Click
 
 		Dim myDouble As Double
-		
-			' code here
-		
+
+		' code here
+
 
 	End Sub
 
