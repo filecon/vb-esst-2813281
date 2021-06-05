@@ -106,21 +106,29 @@ Class MainWindow
 	End Sub
 
 	Private Sub Button_Click(sender As Object, e As RoutedEventArgs)
+
+	End Sub
+
+	Private Sub StartDateTextBox_TextChanged(sender As Object, e As TextChangedEventArgs) Handles StartDateTextBox.TextChanged
+
+	End Sub
+
+	Private Sub Button_Click_1(sender As Object, e As RoutedEventArgs)
 		Dim startDate, endDate As Date
+		Dim interval As Integer
+
+		If Integer.TryParse(IntervalTextBox.Text, interval) = False Then
+			MsgBox($"interval of {IntervalTextBox.Text} is invalid. please enter an integer")
+		End If
 
 		If Date.TryParse(StartDateTextBox.Text, startDate) = False Then
 			MsgBox($"Start Date of {StartDateTextBox.Text} is invalid and cannot be parsed")
 			Exit Sub
 		End If
 
-		endDate = startDate.AddDays(5)
-		endDate = endDate.AddMonths(5)
+		endDate = startDate.AddDays(interval).AddMonths(interval)
 
-		OutputToScreen($"When you add 5 days and 5 months to {startDate.ToShortDateString} the answer is {endDate.ToShortDateString}")
-
-	End Sub
-
-	Private Sub StartDateTextBox_TextChanged(sender As Object, e As TextChangedEventArgs) Handles StartDateTextBox.TextChanged
+		OutputToScreen($"When you add {interval} days and {interval} months to {startDate.ToShortDateString} the answer is {endDate.ToShortDateString}")
 
 	End Sub
 End Class

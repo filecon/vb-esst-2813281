@@ -23,66 +23,83 @@
 							Value='Center' />
 		</Style>
 	</Window.Resources>
-	<DockPanel x:Name='MainPanel'
-						 Background="#FFECF7FF"
-						 LastChildFill="False">
-		<StackPanel Orientation="Horizontal"
-								DockPanel.Dock="Bottom"
-								HorizontalAlignment="Right"
-								Margin='40,5'>
-			<Button x:Name="ButtonC"
-							Content="Date Methods" />
-			<Button x:Name="ClearButton"
-							Content="Clear" />
-		</StackPanel>
-		<StackPanel Orientation="Horizontal"
-								DockPanel.Dock="Bottom"
-								HorizontalAlignment="Right"
-								Margin='40,5'>
-			<Button x:Name="ButtonA"
-							Content="Date variables" />
-			<Button x:Name="ButtonD"
-							Content="Time variables" />
-			<Button x:Name="ButtonB"
-							Content="Formatting" />
+	<Grid>
+		<DockPanel x:Name='MainPanel'
+			Background="#FFECF7FF"
+			LastChildFill="False">
+			<StackPanel Orientation="Horizontal"
+				DockPanel.Dock="Bottom"
+				HorizontalAlignment="Right"
+				Margin='0,5,40,5' Width="555">
+				<Button x:Name="ButtonC"
+					Content="Date Methods" />
+				<Button x:Name="ClearButton"
+					Content="Clear" />
+				<Button x:Name="btnChallenge" Content="Challenge" Height="43" Margin="20,0,0,0" Width="135" Padding="6" Click="Button_Click_1"/>
+			</StackPanel>
+			<StackPanel Orientation="Horizontal"
+				DockPanel.Dock="Bottom"
+				HorizontalAlignment="Right"
+				Margin='40,5'>
+				<Button x:Name="ButtonA"
+					Content="Date variables" />
+				<Button x:Name="ButtonD"
+					Content="Time variables" />
+				<Button x:Name="ButtonB"
+					Content="Formatting" />
 
-		</StackPanel>
+			</StackPanel>
 
-		<StackPanel Orientation='Horizontal'
-								DockPanel.Dock="Top"
-								HorizontalAlignment='Stretch'
-								Margin="40,5">
-			<TextBlock Text='Enter start date:'
-								 MinWidth='150' />
-			<TextBox x:Name="StartDateTextBox"
-							 HorizontalAlignment="Stretch"
-							 MinWidth='200'
-							 Margin='10,0'
-							 Text="14-11-2025"
-							 VerticalAlignment="Stretch" />
-			<TextBlock Text='Enter End date:' />
-			<TextBox x:Name="EndDateTextBox"
-							 HorizontalAlignment="Stretch"
-							 MinWidth='200'
-							 Margin='10,0'
-							 Text="23-11-2025"
-							 VerticalAlignment="Stretch" />
-		</StackPanel>
-		<DockPanel DockPanel.Dock="Top"
-							 Margin="40,5"
-							 LastChildFill='True'>
-			<TextBlock Text='Output:'
-								 Margin='0,10'
-								 MinWidth='150' />
-			<TextBox x:Name="MessageTextBox"
-							 HorizontalAlignment="Stretch"
-							 Margin="10"
-							 TextWrapping="Wrap"
-							 Text=""
-							 VerticalAlignment="Stretch"
-							 IsReadOnly="True"
-							 VerticalScrollBarVisibility='Visible' Height="445" />
+			<StackPanel Orientation='Horizontal'
+				DockPanel.Dock="Top"
+				HorizontalAlignment='Stretch'
+				Margin="40,5">
+				<TextBlock Text='Enter start date:'
+					MinWidth='150' />
+				<TextBox x:Name="StartDateTextBox"
+					HorizontalAlignment="Stretch"
+					MinWidth='200'
+					Margin='10,0'
+					Text="14-11-2025"
+					VerticalAlignment="Stretch" />
+				<TextBlock Text='Enter End date:' />
+				<TextBox x:Name="EndDateTextBox"
+					HorizontalAlignment="Stretch"
+					MinWidth='200'
+					Margin='10,0'
+					Text="23-11-2025"
+					VerticalAlignment="Stretch" />
+			</StackPanel>
+			<DockPanel DockPanel.Dock="Top"
+				Margin="40,5"
+				LastChildFill='True'>
+				<TextBlock Text='Output:'
+					Margin='0,10'
+					MinWidth='150' />
+				<TextBox x:Name="MessageTextBox"
+					HorizontalAlignment="Stretch"
+					Margin="10"
+					TextWrapping="Wrap"
+					Text=""
+					VerticalAlignment="Stretch"
+					IsReadOnly="True"
+					VerticalScrollBarVisibility='Visible' Height="445" />
+			</DockPanel>
+			<Canvas Margin="0,61,0,-62" Width="114">
+				<Label Content="Interval" RenderTransformOrigin="0.5,0.5" Width="109" Canvas.Left="50" Canvas.Top="1">
+					<Label.RenderTransform>
+						<TransformGroup>
+							<ScaleTransform/>
+							<SkewTransform AngleX="1.273"/>
+							<RotateTransform/>
+							<TranslateTransform X="0.478"/>
+						</TransformGroup>
+					</Label.RenderTransform>
+				</Label>
+			</Canvas>
 		</DockPanel>
-		<Button x:Name="btnChallange" Content="Challenge" Margin="20,105,20,-104" VerticalAlignment="Stretch" Click="Button_Click" HorizontalAlignment="Center" VerticalContentAlignment="Center" FontSize="14"/>
-	</DockPanel>
+		<Canvas Margin="60,622,777,10">
+			<TextBox x:Name="IntervalTextBox" TextWrapping="Wrap" Text="5" Width="57"/>
+		</Canvas>
+	</Grid>
 </Window>
