@@ -6,7 +6,8 @@ Class MainWindow
 	Private Sub RunCode(sender As Object, e As RoutedEventArgs) Handles ButtonA.Click
 
 		Dim literalDate = #3/3/1953#
-		Dim parsedDate = Date.Parse("5/25/1975")
+		'Parse Date
+		Dim parsedDate = Date.Parse("05/05/1975")
 		Dim fromDateClass = New Date(1963, 4, 5)
 
 		' current date-time
@@ -104,5 +105,22 @@ Class MainWindow
 		MessageTextBox.Text = ""
 	End Sub
 
+	Private Sub Button_Click(sender As Object, e As RoutedEventArgs)
+		Dim startDate, endDate As Date
 
+		If Date.TryParse(StartDateTextBox.Text, startDate) = False Then
+			MsgBox($"Start Date of {StartDateTextBox.Text} is invalid and cannot be parsed")
+			Exit Sub
+		End If
+
+		endDate = startDate.AddDays(5)
+		endDate = endDate.AddMonths(5)
+
+		OutputToScreen($"When you add 5 days and 5 months to {startDate.ToShortDateString} the answer is {endDate.ToShortDateString}")
+
+	End Sub
+
+	Private Sub StartDateTextBox_TextChanged(sender As Object, e As TextChangedEventArgs) Handles StartDateTextBox.TextChanged
+
+	End Sub
 End Class
