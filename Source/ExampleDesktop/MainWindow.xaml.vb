@@ -8,6 +8,12 @@ Class MainWindow
 		Dim myDouble As Double
 
 		' code here
+		'myInteger = InputTextBox.Text
+		'myDouble = InputTextBox.Text
+
+		'myInteger = InputTextBox.Text
+		myDouble = Double.Parse(InputTextBox.Text, NumberStyles.Currency)
+
 
 		OutputToScreen("--Integer------")
 		OutputToScreen(myInteger.ToString())
@@ -21,9 +27,14 @@ Class MainWindow
 	Private Sub RunCode2(sender As Object, e As RoutedEventArgs) Handles RunCode2Button.Click
 
 		Dim myDouble As Double
-		
-			' code here
-		
+
+		' code here
+
+		If Double.TryParse(InputTextBox.Text, myDouble) Then
+			OutputToScreen(myDouble.ToString)
+		Else
+			MsgBox("The Number " & InputTextBox.Text & " is invalid. Please enter a valid value", MsgBoxStyle.OkOnly, "Invalid Number")
+		End If
 
 	End Sub
 
