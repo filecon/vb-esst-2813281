@@ -73,7 +73,7 @@
 								HorizontalAlignment='Stretch'
 								Margin="40,5">
 			<TextBlock Text='Search for word' />
-			<TextBox x:Name="SearchWordTextbox"
+			<TextBox x:Name="SearchWordTextBox"
 							 HorizontalAlignment="Stretch"
 							 MinWidth='200'
 							 Margin='10,0'

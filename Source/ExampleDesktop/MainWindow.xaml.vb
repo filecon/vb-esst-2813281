@@ -7,7 +7,7 @@ Class MainWindow
 		Dim direction = "East"
 		Dim otherDirection As String = "West"
 		' use the constructor to build a string
-		Dim line = New String("»"c, 63)
+		Dim line = New String("»"c, 63) 'building a string of 63 » characters     
 		OutputToScreen(direction)
 		OutputToScreen(line)
 
