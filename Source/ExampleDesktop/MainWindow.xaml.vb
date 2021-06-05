@@ -8,23 +8,36 @@ Class MainWindow
 
 		OutputToScreen("--No format--")
 		' code here
+		OutputToScreen(myInteger)
+		OutputToScreen(myLong)
 
 		OutputBlankLine()
 		OutputToScreen("--Number------")
 		' code here
+		OutputToScreen(myInteger.ToString("N"))
+		OutputToScreen(myLong.ToString("N"))
 
 		OutputBlankLine()
 		OutputToScreen("--Exponent-------")
 		' code here
+		OutputToScreen(myInteger.ToString("E"))
+		OutputToScreen(myLong.ToString("E"))
 
 		OutputBlankLine()
 		OutputToScreen("--Currency--------")
 		' code here
+		OutputToScreen(myInteger.ToString("C"))
+		OutputToScreen(myLong.ToString("C"))
+		OutputToScreen(myLong.ToString("C", Globalization.CultureInfo.CreateSpecificCulture("en-GB")))
+		OutputToScreen(myLong.ToString("C", Globalization.CultureInfo.CreateSpecificCulture("it-IT")))
+		OutputToScreen(myLong.ToString("C", Globalization.CultureInfo.CreateSpecificCulture("ja-JP")))
 
 		OutputBlankLine()
 		OutputToScreen("--Hexadecimal--------")
 		' code here
-
+		Dim mByte As Byte = 127
+		OutputToScreen(mByte.ToString)
+		OutputToScreen(mByte.ToString("X"))
 
 #Region "Learn More"
 		' learn more about format strings
@@ -37,8 +50,13 @@ Class MainWindow
 
 		OutputToScreen("--Date--------")
 		' code here
+		Dim myDate As Date = #10/21/2021#
+		OutputToScreen(myDate)
+		OutputToScreen(myDate.ToString("D"))
+		OutputToScreen(myDate.ToString("D", Globalization.CultureInfo.CreateSpecificCulture("en-US")))
+		OutputToScreen(myDate.ToString("dddd"))
 
-
+		MsgBox("The formatted date is " & Format(#5/31/1993#, "dddd, d MMM yyyy"))
 #Region "Learn More"
 		' learn more about data format strings
 		' https://docs.microsoft.com/en-us/dotnet/standard/base-types/standard-date-and-time-format-strings
